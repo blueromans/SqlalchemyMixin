@@ -10,6 +10,6 @@ from .exception import SqlAlchemyException
 from .extra import PhoneNumber
 
 
-class BaseMixin(ActiveRecordMixin, DateMixin, ImageMixin, SmartQueryMixin, ReprMixin):
+class BaseMixin(ActiveRecordMixin, DateMixin, SmartQueryMixin, ReprMixin):
     __abstract__ = True
     __repr__ = ReprMixin.__repr__
