@@ -1,0 +1,23 @@
+.DS_Store
+.env
+*.pyc
+*.pyo
+env/
+venv/
+env*
+.tox/
+.cache/
+.pytest_cache/
+.idea/
+.idea/*
+.idea
+dist/
+dist/*
+SqlalchemyMixin.egg-info/
+SqlalchemyMixin.egg-info/*
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+*,cover
+rebuild.sh

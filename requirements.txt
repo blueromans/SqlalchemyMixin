@@ -1,0 +1,6 @@
+sqlalchemy >= 1.0
+six
+typing; python_version < '3.5'
+arrow
+phonenumbers
+python-slugify
