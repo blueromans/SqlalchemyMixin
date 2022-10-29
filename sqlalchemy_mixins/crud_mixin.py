@@ -77,7 +77,7 @@ class CrudMixin(InspectionMixin, SessionMixin):
         """Find record by the id
         :param id_: the primary key
         """
-        return cls.find(id_)
+        return cls.query.get(id_)
 
     @classmethod
     def get_or_abort(cls, id_):
