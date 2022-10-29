@@ -7,6 +7,7 @@ from .user_mixin import UserMixin
 from .crud_mixin import CrudMixin
 from .base_query import BaseQuery
 from .exception import SqlAlchemyException
+from .extra import PhoneNumber
 
 
 class BaseMixin(ActiveRecordMixin, DateMixin, ImageMixin, SmartQueryMixin, ReprMixin):
