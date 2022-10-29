@@ -6,7 +6,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setuptools.setup(
     name='SqlalchemyMixin',
-    version="0.0.15",
+    version="0.0.16",
     author="Yaşar Özyurt",
     author_email="blueromans@gmail.com",
     description='Active Record, Django-like queries, nested eager load '
@@ -33,6 +33,6 @@ setuptools.setup(
     keywords=['sqlalchemy', 'active record', 'activerecord', 'orm',
               'django-like', 'django', 'eager load', 'eagerload', 'repr',
               '__repr__', 'mysql', 'postgresql', 'pymysql', 'sqlite'],
-    packages=['sqlalchemy_mixins'],
+    packages=['sqlalchemy_mixins', 'sqlalchemy_mixins.extra'],
     python_requires=">=3.6",
 )
