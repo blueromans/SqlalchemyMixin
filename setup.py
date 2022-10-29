@@ -6,16 +6,16 @@ long_description = (this_directory / "README.md").read_text()
 
 setuptools.setup(
     name='SqlalchemyMixin',
-    version="0.0.12",
+    version="0.0.13",
     author="Yaşar Özyurt",
     author_email="blueromans@gmail.com",
     description='Active Record, Django-like queries, nested eager load '
                 'and beauty __repr__ for SQLAlchemy',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/blueromans/sqlalchemy_mixin.git',
+    url='https://github.com/blueromans/SqlAlchemyMixin.git',
     project_urls={
-        "Bug Tracker": "https://github.com/blueromans/sqlalchemy_mixin/issues",
+        "Bug Tracker": "https://github.com/blueromans/SqlAlchemyMixin/issues",
     },
     classifiers=[
         "Programming Language :: Python :: 3",
