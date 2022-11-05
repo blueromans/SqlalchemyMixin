@@ -140,8 +140,6 @@ class CrudMixin(InspectionMixin, SessionMixin):
         if 'filter' in data and data['filter'] is not None and bool(data['filter']):
             for key, value in data.get('filter').items():
                 column = get_column_attr(cls, key)
-                if column is None:
-                    column = get_column_attr(cls, key)
                 if column is not None and len(str(value)) > 0 and value is not None:
                     column_type = get_type(column)
                     column_type = re.sub('[^A-Za-z]+', '', str(column_type))

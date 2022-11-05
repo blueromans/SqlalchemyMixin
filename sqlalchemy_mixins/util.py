@@ -1,9 +1,9 @@
-from sqlalchemy import func
+from sqlalchemy import func, String
 from sqlalchemy.orm import InstrumentedAttribute, ColumnProperty, RelationshipProperty
 
 QUERY_MATCHES = {'BOOLEAN': (lambda query, column, value: query.filter(column == bool(int(value)))),
                  'VARCHAR': (lambda query, column, value: query.filter(
-                     func.lower(column).contains("%" + value.lower() + "%"))),
+                     func.lower(func.cast(column,String)).contains("%" + value.lower() + "%"))),
                  'INTEGER': (lambda query, column, value: query.filter(column == int(value))),
                  'LIST': (lambda query, column, value: query.filter(column.in_(value))),
                  }
