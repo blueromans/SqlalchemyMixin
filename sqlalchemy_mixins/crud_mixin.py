@@ -1,6 +1,6 @@
 import re
 
-from sqlalchemy import text
+from sqlalchemy import text, exc
 
 from .exception import SqlAlchemyException
 from .util import classproperty, get_column_attr, get_type, get_count, QUERY_MATCHES
@@ -37,7 +37,10 @@ class CrudMixin(InspectionMixin, SessionMixin):
             self.session.flush()
         except Exception as e:
             self.session.rollback()
-            raise SqlAlchemyException(e)
+            if isinstance(e, exc.IntegrityError):
+                message = e.args[0].split('=')[1].replace('(', '').replace(')', '').rstrip()
+                raise SqlAlchemyException(message)
+            raise SqlAlchemyException(e.__str__())
         else:
             return self
 
