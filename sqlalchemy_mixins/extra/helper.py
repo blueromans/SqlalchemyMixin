@@ -8,4 +8,5 @@ def is_valid_phone(phone):
         phone = PhoneNumber(phone)
         return phone.e164
     except:
-        return None
+        raise Exception("Invalid phone number type! Phone number format must be +901234567890")
+
