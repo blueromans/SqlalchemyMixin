@@ -6,7 +6,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setuptools.setup(
     name='SqlalchemyMixin',
-    version="0.0.31",
+    version="0.0.35",
     author="Yaşar Özyurt",
     author_email="blueromans@gmail.com",
     description='Active Record, Django-like queries, nested eager load '
