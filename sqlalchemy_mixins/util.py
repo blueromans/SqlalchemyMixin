@@ -5,7 +5,7 @@ QUERY_MATCHES = {'BOOLEAN': (lambda query, column, value: query.filter(column ==
                  'VARCHAR': (lambda query, column, value: query.filter(
                      func.lower(func.cast(column,String)).contains("%" + value.lower() + "%"))),
                  'INTEGER': (lambda query, column, value: query.filter(column == int(value))),
-                 'LIST': (lambda query, column, value: query.filter(column.in_(value))),
+                 'LIST': (lambda query, column, value: query if len(value) == 0 else query.filter(column.in_(value))),
                  }
 
 
