@@ -17,11 +17,11 @@ class CrudMixin(InspectionMixin, SessionMixin):
 
     @classmethod
     def filter_by(cls, **kwargs):
-        return cls.query.filter_by(**kwargs)
+        return cls.query.filter_by(**kwargs).populate_existing()
 
     @classmethod
     def filter(cls, *arg):
-        return cls.query.filter(*arg).order_by(None)
+        return cls.query.filter(*arg).populate_existing()
 
     def fill(self, **kwargs):
         for name in kwargs.keys():
