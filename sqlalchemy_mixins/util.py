@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from sqlalchemy import func, String
 from sqlalchemy.orm import InstrumentedAttribute, ColumnProperty, RelationshipProperty
 
@@ -6,6 +8,10 @@ QUERY_MATCHES = {'BOOLEAN': (lambda query, column, value: query.filter(column ==
                      func.lower(func.cast(column,String)).contains("%" + value.lower() + "%"))),
                  'INTEGER': (lambda query, column, value: query.filter(column == int(value))),
                  'LIST': (lambda query, column, value: query if len(value) == 0 else query.filter(column.in_(value))),
+                 'DATE': (lambda query, column, value: query.filter(
+                     func.date(column) == datetime.strptime(value, "%Y-%m-%d %H:%M:%S.%f").date())),
+                 'DATETIME': (lambda query, column, value: query.filter(
+                     func.datetime(column) == datetime.strptime(value, "%Y-%m-%d %H:%M:%S.%f")))
                  }
 
 
