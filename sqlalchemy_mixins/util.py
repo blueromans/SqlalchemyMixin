@@ -9,7 +9,7 @@ QUERY_MATCHES = {'BOOLEAN': (lambda query, column, value: query.filter(column ==
                  'INTEGER': (lambda query, column, value: query.filter(column == int(value))),
                  'LIST': (lambda query, column, value: query if len(value) == 0 else query.filter(column.in_(value))),
                  'DATE': (lambda query, column, value: query.filter(
-                     func.date(column) == datetime.strptime(value, "%Y-%m-%d %H:%M:%S.%f").date())),
+                     func.date(column) == datetime.strptime(value, "%Y-%m-%d").date())),
                  'DATETIME': (lambda query, column, value: query.filter(
                      func.datetime(column) == datetime.strptime(value, "%Y-%m-%d %H:%M:%S.%f")))
                  }
